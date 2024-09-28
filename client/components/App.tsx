@@ -12,7 +12,7 @@ function App() {
         />
         <h1>Navigating the worldwide routes</h1>
       </div>
-      {/* This 'main' div is only  for styling (so we can use flexbox) */}
+      {/* This 'main' div is only for styling (so we can use flexbox) */}
       <div className="main">
         <Nav />
         <Outlet />

@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom'
 
 import continentsData from '../../data/continents.ts'
 
+import { Link } from 'react-router-dom'
+
 const Continent = () => {
   const { name } = useParams<{ name: string }>() // Extract 'name' parameter from the URL
 
@@ -24,7 +26,10 @@ const Continent = () => {
       {countries.length > 0 ? (
         <ul>
           {countries.map((country) => (
-            <li key={country.code}>{country.name}</li> // Use country.code as the key for better uniqueness
+            <li key={country.code}>
+              {/* Wrap country name in a Link to navigate to the Country component */}
+              <Link to={`/country/${country.code}`}>{country.name}</Link>
+            </li>
           ))}
         </ul>
       ) : (
