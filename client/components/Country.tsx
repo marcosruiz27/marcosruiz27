@@ -1,10 +1,9 @@
-import { useParams } from 'react-router-dom'
-
+import { useParams, Link } from 'react-router-dom'
 import countriesData from '../../data/countries.ts'
 
 const Country = () => {
-  // Extract the 'code' parameter from the URL
-  const { code } = useParams<{ code: string }>()
+  // Extract both 'name' and 'code' parameters from the URL
+  const { name, code } = useParams<{ name: string; code: string }>()
 
   // Find the country object in the data array based on the code
   const country = countriesData.find((country) => country.code === code)
@@ -14,40 +13,45 @@ const Country = () => {
     return <p>Country not found!</p>
   }
 
-  // Destructure the properties of the country for easier access
-  const {
-    name,
-    capital,
-    areaSqKms,
-    population,
-    currencyCode,
-    currencyName,
-    neighbours,
-    flag,
-  } = country
+  // Split the neighbors' string into an array and find the corresponding country names
+  const neighbourCountries = country.neighbours
+    ? country.neighbours.split(',').map((neighbourCode) => {
+        // Find the neighbor country object by its code
+        return countriesData.find((c) => c.code === neighbourCode)
+      })
+    : []
 
   return (
     <div>
-      <h1>
-        {flag} {name}
-      </h1>
-      <ul>
-        <li>
-          <strong>Capital:</strong> {capital}
-        </li>
-        <li>
-          <strong>Area:</strong> {areaSqKms} km²
-        </li>
-        <li>
-          <strong>Population:</strong> {population}
-        </li>
-        <li>
-          <strong>Currency:</strong> {currencyCode} - {currencyName}
-        </li>
-        <li>
-          <strong>Neighbours:</strong> {neighbours}
-        </li>
-      </ul>
+      <h1>{country.name}</h1>
+      <p>Capital: {country.capital}</p>
+      <p>Area: {country.areaSqKms} sq km</p>
+      <p>Population: {country.population}</p>
+      <p>
+        Currency: {country.currencyName} ({country.currencyCode})
+      </p>
+      <p>Flag: {country.flag}</p>
+
+      {/* Render the list of neighbors with their names and links */}
+      <h2>Neighbouring Countries:</h2>
+      {neighbourCountries.length > 0 ? (
+        <ul>
+          {neighbourCountries.map((neighbour) =>
+            neighbour ? (
+              <li key={neighbour.code}>
+                {/* Link to the neighbouring country within the same continent */}
+                <Link to={`/continent/${name}/country/${neighbour.code}`}>
+                  {neighbour.name}
+                </Link>
+              </li>
+            ) : (
+              <li key={`unknown-${neighbour}`}>Unknown Neighbor</li>
+            ),
+          )}
+        </ul>
+      ) : (
+        <p>This country has no neighbouring countries.</p>
+      )}
     </div>
   )
 }

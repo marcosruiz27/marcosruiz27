@@ -8,7 +8,6 @@ function Nav() {
     <div>
       <h2>Nav</h2>
       <ul>
-        <li>Build your continent list here</li>
         {continentsNames.map((continent) => (
           <li key={continent}>
             <Link to={`/continents/${continent}`}>{continent}</Link>
