@@ -1,7 +1,8 @@
-import continentsData from '../../data/continents'
+import Data from '../../data/continents'
+import { Link } from 'react-router-dom'
 
 function Nav() {
-  const continentsNames = Object.keys(continentsData)
+  const continentsNames = Object.keys(Data)
 
   return (
     <div>
@@ -9,7 +10,9 @@ function Nav() {
       <ul>
         <li>Build your continent list here</li>
         {continentsNames.map((continent) => (
-          <li key={continent}>{continent}</li>
+          <li key={continent}>
+            <Link to={`/continents/${continent}`}>{continent}</Link>
+          </li>
         ))}
       </ul>
     </div>
