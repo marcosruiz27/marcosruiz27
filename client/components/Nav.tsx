@@ -6,14 +6,16 @@ function Nav() {
 
   return (
     <div>
-      <h2>Nav</h2>
-      <ul>
-        {continentsNames.map((continent) => (
-          <li key={continent}>
-            <Link to={`/continents/${continent}`}>{continent}</Link>
-          </li>
-        ))}
-      </ul>
+      <nav>
+        <h2>Nav</h2>
+        <ul>
+          {continentsNames.map((continent) => (
+            <li key={continent}>
+              <Link to={`/continents/${continent}`}>{continent}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   )
 }
