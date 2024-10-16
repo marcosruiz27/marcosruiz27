@@ -17,10 +17,7 @@ const Continent = () => {
     <div>
       <h1>Countries in {name}</h1>
       {continent && continent.image && (
-        <img
-          src={`/public/images/${continent.image}`}
-          alt={`Image of ${name}`}
-        />
+        <img src={`/public/images/${continent.image}`} alt="" />
       )}
       {/* Display the list of countries */}
       {countries.length > 0 ? (
