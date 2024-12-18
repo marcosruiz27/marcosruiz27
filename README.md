@@ -16,9 +16,12 @@ Each project reflects:
 ## 📂 Portfolio Highlights
 
 Below are links to my portfolio repositories where I showcase different aspects of my journey in software development:
-- [Project 1: **Project Name**](#) - 
-- [Project 2: **Project Name**](#) - 
-- [Project 3: **Project Name**](#) - 
+- [Project 1: **Worldwide Routing**](https://github.com/marcosruiz27/Worldwide-Routing) - React + Client Side Rendering/Routing
+- [Project 2: **Pupparazzi**](https://github.com/marcosruiz27/Pupparazzi) - Express Server and JSON APIs
+- [Project 3: **DreamFest**](https://github.com/marcosruiz27/DreamFest) - Database Relationships and Complex Joins
+- [Project 4: **ScienceFictionMovies**](https://github.com/marcosruiz27/ScienceFictionMovies) - Full-Stack Web Application
 
 Feel free to explore, and don’t hesitate to reach out if you’d like to connect or discuss any of the projects!
 
+[**Linkedin**](#https://www.linkedin.com/in/marcosiruiz/) 
+[**CV**](#https://github.com/marcosruiz27/Curriculum-Vitae/blob/main/CVitae.pdf)
