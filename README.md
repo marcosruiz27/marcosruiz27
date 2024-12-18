@@ -23,5 +23,5 @@ Below are links to my portfolio repositories where I showcase different aspects 
 
 Feel free to explore, and don’t hesitate to reach out if you’d like to connect or discuss any of the projects!
 
-[**Linkedin**](#https://www.linkedin.com/in/marcosiruiz/) 
-[**CV**](#https://github.com/marcosruiz27/Curriculum-Vitae/blob/main/CVitae.pdf)
+[**Linkedin**](https://www.linkedin.com/in/marcosiruiz/) 
+[**CV**](https://github.com/marcosruiz27/Curriculum-Vitae/blob/main/CVitae.pdf)
